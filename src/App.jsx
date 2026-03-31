@@ -13,10 +13,8 @@ function App() {
       <img className='logoPokedex' src={imagemPokedexLogo} alt='logo Pokedex'/>
 
     <input placeholder='Adicione a sua pesquisa' className='pesquisa'></input>
-    
-    {/* aqui tem que por o negocio de navegar boa sorte para quem for fazer */}
 
-    <div className='container'>
+    <div className='container' >
       {data.map((pokemon) => (
         <Card key={pokemon.id}
         imagem={pokemon.imagem} 
