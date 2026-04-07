@@ -1,62 +1,76 @@
-import { useState } from 'react'
-import { data } from './data'
-import Card from './Card'
-import imagemPokedexLogo from './assets/imagemPokedexLogo.png'
-import './App.css'
+import { useState } from "react";
+import { data } from "./data";
+import Card from "./Card";
+import imagemPokedexLogo from "./assets/imagemPokedexLogo.png";
+import "./App.css";
 
 function App() {
-  
+	const [filtro, setFiltro] = useState("");
+	const [categoria, setCategoria] = useState("Todos");
 
-  // filtro da busca dos pokemons
-  const [filtro, setFiltro] = useState("");
+	const listaFiltrada = data.filter((pokemon) => {
+		const textoDigitado = filtro.toLowerCase().trim();
 
-  const listaFiltrada = data.filter((pokemon) => {
+		const filtroNome = pokemon.name.toLowerCase().includes(textoDigitado);
+		const filtroId = pokemon.id.toString().includes(textoDigitado);
+		const filtroElemento = pokemon.tipo.some((elemento) => {
+			return elemento.toLowerCase().includes(textoDigitado);
+		});
 
-    const textoDigitado = filtro.toLowerCase().trim();
+		const passaFiltroTexto =
+			textoDigitado === "" || filtroNome || filtroId || filtroElemento;
 
-    //serve para transformar o texto em minusculo e tirar espaços em brancos
-    if(textoDigitado === ""){
-      return true;
-    }
-    
-    const filtroNome = pokemon.name.toLowerCase().includes(textoDigitado);
-    
-    const filtroId = pokemon.id.toString().includes(textoDigitado);
+		const passaFiltroCategoria =
+			categoria === "Todos" ||
+			pokemon.tipo.some((tipo) => tipo.trim() === categoria);
 
-    const filtroElemento = pokemon.tipo.some((elemento) => {
-      return elemento.toLowerCase().includes(textoDigitado);
-    });
+		return passaFiltroTexto && passaFiltroCategoria;
+	});
 
-    //vai retornar uma das 3 categorias na busca feito pelo usuario
-    return filtroNome || filtroId || filtroElemento;
-  }); 
+	return (
+		<>
+			<img className="logoPokedex" src={imagemPokedexLogo} alt="logo Pokedex" />
 
-  return (
-    <>
-      <img className='logoPokedex' src={imagemPokedexLogo} alt='logo Pokedex'/>
+			<div className="filtros-container">
+				<input
+					placeholder="Adicione a sua pesquisa"
+					className="pesquisa"
+					value={filtro}
+					onChange={(evento) => setFiltro(evento.target.value)}
+				/>
 
-      {}
-      <input 
-        placeholder='Adicione a sua pesquisa' 
-        className='pesquisa'
-        value={filtro}
-        onChange={(evento) => setFiltro(evento.target.value)}
-      />
+				<select
+					className="select-categoria"
+					value={categoria}
+					onChange={(evento) => setCategoria(evento.target.value)}
+				>
+					<option value="Todos">Todos os Tipos</option>
+					<option value="Planta">Planta</option>
+					<option value="Venenoso">Venenoso</option>
+					<option value="Fogo">Fogo</option>
+					<option value="Agua">Agua</option>
+					<option value="Inseto">Inseto</option>
+					<option value="Voador">Voador</option>
+					<option value="Normal">Normal</option>
+					<option value="Eletrico">Eletrico</option>
+					<option value="Sombrio">Sombrio</option>
+					<option value="Psiquico">Psiquico</option>
+				</select>
+			</div>
 
-      <div className='container' >
-        {}
-        {listaFiltrada.map((pokemon) => (
-          <Card 
-            key={pokemon.id}
-            imagem={pokemon.imagem} 
-            nome={pokemon.name}
-            id={pokemon.id}
-            tipo={pokemon.tipo}
-          />
-        ))}
-      </div>
-    </>
-  )
+			<div className="container">
+				{listaFiltrada.map((pokemon) => (
+					<Card
+						key={pokemon.id}
+						imagem={pokemon.imagem}
+						nome={pokemon.name}
+						id={pokemon.id}
+						tipo={pokemon.tipo}
+					/>
+				))}
+			</div>
+		</>
+	);
 }
 
-export default App
+export default App;
