@@ -40,7 +40,7 @@ function App() {
 				/>
 
 				<select
-					className="select-categoria"
+					className="botaoPesquisa"
 					value={categoria}
 					onChange={(evento) => setCategoria(evento.target.value)}
 				>
@@ -66,6 +66,7 @@ function App() {
 						nome={pokemon.name}
 						id={pokemon.id}
 						tipo={pokemon.tipo}
+						fraqueza={pokemon.fraqueza}
 					/>
 				))}
 			</div>

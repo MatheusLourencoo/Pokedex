@@ -1,4 +1,4 @@
-const Card = ({ nome, imagem, id, tipo }) => {
+const Card = ({ nome, imagem, id, tipo, fraqueza}) => {
   const tipoPrincipal = tipo[0].trim();
 
   return (
@@ -7,7 +7,7 @@ const Card = ({ nome, imagem, id, tipo }) => {
       style={{
         backgroundColor:
           tipoPrincipal === "Planta"
-            ? "#78C850"
+            ? "#4fac20"
             : tipoPrincipal === "Fogo"
             ? "#F08030"
             : tipoPrincipal === "Agua"
@@ -15,18 +15,20 @@ const Card = ({ nome, imagem, id, tipo }) => {
             : tipoPrincipal === "Eletrico"
             ? "#ddcf3c"
             : tipoPrincipal === "Inseto"
-            ? "#616c25"
+            ? "#9bad35"
             : tipoPrincipal === "Normal"
             ? "#ccc"
             : tipoPrincipal === "Psiquico"
-            ? "#F85888"
-            : "#360630"
+            ? "#f858dd"
+            : "#69045b"
       }}
     >
       <img src={imagem} alt={nome} />
       <h2>{nome}</h2>
       <p>{id}</p>
-      <p>{tipo.join(", ")}</p>
+      <p>Tipo: {tipo.join(", ")}</p>
+      <p>Fraqueza: {fraqueza.join(", ")}</p>
+      
     </div>
   );
 };

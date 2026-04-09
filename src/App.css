@@ -7,6 +7,7 @@
 
 }
 
+
 .card:hover {
   transform: scale(1.05);
 }
@@ -43,7 +44,21 @@ body{
 	width: 200px;
 	text-align: center;
 	margin-top: 50px;
-
 	box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+	transition: 0.3s;
+}
+
+.botaoPesquisa{
+	display: flex;
+	margin-left: 45%;
+	margin-top: 20px;
+	border-radius: 30px;
+	height: 30px;
+}
+
+.botaoPesquisa:hover{
+    cursor: pointer;
+    opacity: 0.8;
+	transform: scale(1.05);
 	transition: 0.3s;
 }
