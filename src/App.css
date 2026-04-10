@@ -4,7 +4,6 @@
 	top: -50px;
 	left: 50%;
 	transform: translateX(-50%);
-
 }
 
 
@@ -50,15 +49,17 @@ body{
 
 .botaoPesquisa{
 	display: flex;
-	margin-left: 45%;
+	margin-left: 42%;
 	margin-top: 20px;
 	border-radius: 30px;
 	height: 30px;
+	flex-wrap: wrap;
 }
 
-.botaoPesquisa:hover{
-    cursor: pointer;
-    opacity: 0.8;
-	transform: scale(1.05);
-	transition: 0.3s;
+button{
+	border-radius: 50px;
+	padding: 5px 10px 5px 10px;
+	font-size: 15px;
+	font-weight: bold;
 }
+
