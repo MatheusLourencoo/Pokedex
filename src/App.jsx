@@ -5,6 +5,7 @@ import imagemPokedexLogo from "./assets/imagemPokedexLogo.png";
 import "./App.css";
 
 //fiz errado o botão e tive que refazer tudo (revisar antes do checkpoint)
+//lembrar de tirar comentários
 
 function App() {
 	const [pesquisa, setPesquisa] = useState("");
