@@ -4,27 +4,28 @@ import Card from "./Card";
 import imagemPokedexLogo from "./assets/imagemPokedexLogo.png";
 import "./App.css";
 
+//fiz errado o botão e tive que refazer tudo (revisar antes do checkpoint)
+//lembrar de tirar comentários
+
 function App() {
-	const [filtro, setFiltro] = useState("");
-	const [categoria, setCategoria] = useState("Todos");
+	const [pesquisa, setPesquisa] = useState("");
+	const [categoriaAtiva, setCategoriaAtiva] = useState("name");
+
+	const categorias = ["name", "id", "tipo", "fraqueza"];
 
 	const listaFiltrada = data.filter((pokemon) => {
-		const textoDigitado = filtro.toLowerCase().trim();
+		const termo = pesquisa.toLowerCase().trim();
+		if (termo === "") return true;
 
-		const filtroNome = pokemon.name.toLowerCase().includes(textoDigitado);
-		const filtroId = pokemon.id.toString().includes(textoDigitado);
-		const filtroElemento = pokemon.tipo.some((elemento) => {
-			return elemento.toLowerCase().includes(textoDigitado);
-		});
+		const valorDaCategoria = pokemon[categoriaAtiva];
 
-		const passaFiltroTexto =
-			textoDigitado === "" || filtroNome || filtroId || filtroElemento;
+		if (Array.isArray(valorDaCategoria)) {
+			return valorDaCategoria.some((item) =>
+				item.toLowerCase().includes(termo),
+			);
+		}
 
-		const passaFiltroCategoria =
-			categoria === "Todos" ||
-			pokemon.tipo.some((tipo) => tipo.trim() === categoria);
-
-		return passaFiltroTexto && passaFiltroCategoria;
+		return valorDaCategoria.toString().toLowerCase().includes(termo);
 	});
 
 	return (
@@ -32,12 +33,26 @@ function App() {
 			<img className="logoPokedex" src={imagemPokedexLogo} alt="logo Pokedex" />
 
 			<div className="filtros-container">
+				<div className="botoes-categorias">
+					{categorias.map((cat) => (
+						<button
+							key={cat}
+							className={categoriaAtiva === cat ? "active" : ""}
+							onClick={() => setCategoriaAtiva(cat)}
+						>
+							{cat.charAt(0).toUpperCase() + cat.slice(1)}
+						</button>
+					))}
+				</div>
+
 				<input
-					placeholder="Adicione a sua pesquisa"
+					placeholder={`Pesquisar por ${categoriaAtiva}...`}
 					className="pesquisa"
-					value={filtro}
-					onChange={(evento) => setFiltro(evento.target.value)}
+					value={pesquisa}
+					onChange={(e) => setPesquisa(e.target.value)}
 				/>
+ main
+
 
 				<select
 					className="botaoPesquisa"
@@ -56,6 +71,7 @@ function App() {
 					<option value="Sombrio">Sombrio</option>
 					<option value="Psiquico">Psiquico</option>
 				</select>
+ main
 			</div>
 
 			<div className="container">
