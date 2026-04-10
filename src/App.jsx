@@ -51,6 +51,27 @@ function App() {
 					value={pesquisa}
 					onChange={(e) => setPesquisa(e.target.value)}
 				/>
+ main
+
+
+				<select
+					className="botaoPesquisa"
+					value={categoria}
+					onChange={(evento) => setCategoria(evento.target.value)}
+				>
+					<option value="Todos">Todos os Tipos</option>
+					<option value="Planta">Planta</option>
+					<option value="Venenoso">Venenoso</option>
+					<option value="Fogo">Fogo</option>
+					<option value="Agua">Agua</option>
+					<option value="Inseto">Inseto</option>
+					<option value="Voador">Voador</option>
+					<option value="Normal">Normal</option>
+					<option value="Eletrico">Eletrico</option>
+					<option value="Sombrio">Sombrio</option>
+					<option value="Psiquico">Psiquico</option>
+				</select>
+ main
 			</div>
 
 			<div className="container">
@@ -61,6 +82,7 @@ function App() {
 						nome={pokemon.name}
 						id={pokemon.id}
 						tipo={pokemon.tipo}
+						fraqueza={pokemon.fraqueza}
 					/>
 				))}
 			</div>
