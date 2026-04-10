@@ -19,8 +19,6 @@ export const data = [
     {id: 18, name: "Pidgeot", tipo: ["Normal", "Voador"],  fraqueza: ["Eletrico", "Pedra", "Gelo"], imagem: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/018.png"},
     {id: 19, name: "Rattata", tipo: ["Normal"],  fraqueza: ["Luta"], imagem: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/019.png"},
     {id: 20, name: "Raticate", tipo: ["Normal"],  fraqueza: ["Luta"], imagem: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/020.png"},
-
-
     {id: 59, name: "Arcanine", tipo: ["Fogo"], fraqueza: ["Agua", "Pedra", "Terra"], imagem: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/059.png"},
     {id: 54, name: "Psyduck ", tipo: ["Agua"], fraqueza: ["Planta", "Eletrico"], imagem: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/054.png"},
     {id: 405, name: "Luxray", tipo: ["Eletrico"], fraqueza: ["Terra"], imagem: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/405.png"},
@@ -28,7 +26,7 @@ export const data = [
     {id: 25, name: "Pikachu", tipo: ["Eletrico"], fraqueza: ["Terra"], imagem: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/025.png"},
     {id: 129, name: "Magikarp", tipo: ["Agua"], fraqueza: ["Planta", "Eletrico"], imagem: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/129.png"},
     {id: 130, name: "Gyarados ", tipo: ["Agua", "Voador"], fraqueza: ["Planta", "Pedra"], imagem: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/130.png"},
-    {id: 494, name: "Victini ", tipo: ["Psiquico", "Fogo"], fraqueza: ["Agua", "Pedra", "Terra", "Fantasma", "Sombrio"], imagem: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/494.png"},
+    {id: 494, name: "Victini ", tipo: ["Psiquico", "Fogo"], fraqueza: ["Agua", "Terra", "Fantasma", "Sombrio"], imagem: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/494.png"},
     {id: 493, name: "Arceus ", tipo: ["Normal"], fraqueza: ["Luta"], imagem: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/493.png"}
     
 
