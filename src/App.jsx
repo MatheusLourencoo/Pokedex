@@ -5,6 +5,10 @@ import "./App.css";
 
 import BarraPesquisa from "./components/BarraPesquisa";
 import ListaPokemons from "./components/ListaPokemons";
+import SelecaoOrdem from "./components/SelecaoOrdem";
+import FiltroTipos from "./components/FiltroTipos";
+import FiltroFraquezas from "./components/FiltroFraquezas";
+
 
 function App() {
   const [termoBusca, setTermoBusca] = useState("");
