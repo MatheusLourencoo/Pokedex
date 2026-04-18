@@ -50,10 +50,22 @@ function App() {
     <>
       <img className="logoPokedex" src={imagemPokedexLogo} alt="logo Pokedex" />
       <BarraPesquisa termoBusca={termoBusca} setTermoBusca={setTermoBusca} />
-      {/* Filtros ainda inline (serão componentizados nos próximos commits) */}
+            <FiltroTipos
+        tiposDisponiveis={tiposDisponiveis}
+        tiposSelecionados={tiposSelecionados}
+        alternarTipo={alternarTipo}
+        limparTipos={limparTipos}
+      />
+      <FiltroFraquezas
+        fraquezasPossiveis={fraquezasPossiveis}
+        fraquezasSelecionadas={fraquezasSelecionadas}
+        alternarFraqueza={alternarFraqueza}
+        limparFraquezas={limparFraquezas}
+      />
+      <SelecaoOrdem ordemSelecionada={ordemSelecionada} setOrdemSelecionada={setOrdemSelecionada} />
+      
       <div style={{ display: "flex", flexDirection: "column", gap: "30px", marginTop: "30px", alignItems: "center" }}>
-        {/* Aqui ainda estão os botões inline do commit 5 */}
-        {/* ... (cole o bloco dos filtros de tipo e fraqueza + select ordem do commit 5) */}
+       
       </div>
       <ListaPokemons listaFiltrada={listaFiltrada} />
     </>
