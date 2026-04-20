@@ -6,7 +6,6 @@ function FiltroTipos({
 }) {
   return (
     <div style={{ textAlign: "center" }}>
-      <h4 style={{ marginBottom: "10px" }}>Filtrar por Tipo</h4>
       <div
         style={{
           display: "flex",

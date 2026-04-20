@@ -6,7 +6,6 @@ function FiltroFraquezas({
 }) {
   return (
     <div style={{ textAlign: "center" }}>
-      <h4 style={{ marginBottom: "10px" }}>Filtrar por Fraqueza</h4>
       <div
         style={{
           display: "flex",

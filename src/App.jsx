@@ -52,26 +52,48 @@ function App() {
 
   return (
     <>
-      <img className="logoPokedex" src={imagemPokedexLogo} alt="logo Pokedex" />
-      <BarraPesquisa termoBusca={termoBusca} setTermoBusca={setTermoBusca} />
-            <FiltroTipos
-        tiposDisponiveis={tiposDisponiveis}
-        tiposSelecionados={tiposSelecionados}
-        alternarTipo={alternarTipo}
-        limparTipos={limparTipos}
-      />
-      <FiltroFraquezas
-        fraquezasPossiveis={fraquezasPossiveis}
-        fraquezasSelecionadas={fraquezasSelecionadas}
-        alternarFraqueza={alternarFraqueza}
-        limparFraquezas={limparFraquezas}
-      />
-      <SelecaoOrdem ordemSelecionada={ordemSelecionada} setOrdemSelecionada={setOrdemSelecionada} />
+
+      <header className="cabecalho">
+        <img className="logoPokedex" src={imagemPokedexLogo} alt="logo Pokedex" />
+        <BarraPesquisa termoBusca={termoBusca} setTermoBusca={setTermoBusca} />
+      </header>
       
-      <div style={{ display: "flex", flexDirection: "column", gap: "30px", marginTop: "30px", alignItems: "center" }}>
-       
+      <div className="app-container">
+
+        <div className="botao-ordenar">
+          <SelecaoOrdem
+            ordemSelecionada={ordemSelecionada}
+            setOrdemSelecionada={setOrdemSelecionada} />
+        </div>
+
+        <div className="area-filtros">
+          <div className="secao-filtro">
+            <h2>Filtrar por Tipo</h2>
+            <FiltroTipos
+              tiposDisponiveis={tiposDisponiveis}
+              tiposSelecionados={tiposSelecionados}
+              alternarTipo={alternarTipo}
+              limparTipos={limparTipos}
+            />
+          </div>
+
+          <div className="secao-filtro">
+            <h2>Filtrar por Fraqueza</h2>
+            <FiltroFraquezas
+              fraquezasPossiveis={fraquezasPossiveis}
+              fraquezasSelecionadas={fraquezasSelecionadas}
+              alternarFraqueza={alternarFraqueza}
+              limparFraquezas={limparFraquezas}
+            />
+          </div>
+        </div>
+
+        <main className="area-cards">
+          <ListaPokemons listaFiltrada={listaFiltrada} />
+        </main>
+
       </div>
-      <ListaPokemons listaFiltrada={listaFiltrada} />
+
     </>
   );
 }
