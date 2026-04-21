@@ -1,3 +1,5 @@
+import { getCor } from "./cores";
+
 function FiltroFraquezas({
   fraquezasPossiveis,
   fraquezasSelecionadas,
@@ -25,12 +27,13 @@ function FiltroFraquezas({
                 padding: "12px 18px",
                 border: "2px solid #ccc",
                 borderRadius: "8px",
-                backgroundColor: selecionado ? "#28a745" : "#f8f9fa",
+                backgroundColor: selecionado ? getCor(fraqueza) : "#f8f9fa",
                 color: selecionado ? "white" : "#333",
                 fontWeight: selecionado ? "bold" : "normal",
                 cursor: "pointer",
                 transition: "all 0.2s",
                 minWidth: "80px",
+                boxShadow: selecionado ? "0 4px 8px rgba(0,0,0,0.2)" : "none",
               }}
             >
               {fraqueza}

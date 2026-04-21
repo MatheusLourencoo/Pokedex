@@ -1,9 +1,12 @@
+import { getCor } from "./cores";
+
 function FiltroTipos({
   tiposDisponiveis,
   tiposSelecionados,
   alternarTipo,
   limparTipos,
 }) {
+
   return (
     <div style={{ textAlign: "center" }}>
       <div
@@ -25,12 +28,13 @@ function FiltroTipos({
                 padding: "12px 18px",
                 border: "2px solid #ccc",
                 borderRadius: "8px",
-                backgroundColor: selecionado ? "#007bff" : "#f8f9fa",
+                backgroundColor: selecionado ? getCor(tipo) : "#f8f9fa",
                 color: selecionado ? "white" : "#333",
                 fontWeight: selecionado ? "bold" : "normal",
                 cursor: "pointer",
                 transition: "all 0.2s",
                 minWidth: "80px",
+                boxShadow: selecionado ? "0 4px 8px rgba(0,0,0,0.2)" : "none",
               }}
             >
               {tipo}
