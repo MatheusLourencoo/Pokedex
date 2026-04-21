@@ -2,7 +2,6 @@ import { useState } from "react";
 import { data } from "./data";
 import imagemPokedexLogo from "./assets/imagemPokedexLogo.png";
 import "./App.css";
-
 import BarraPesquisa from "./components/BarraPesquisa";
 import ListaPokemons from "./components/ListaPokemons";
 import SelecaoOrdem from "./components/SelecaoOrdem";

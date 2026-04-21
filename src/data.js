@@ -10,7 +10,7 @@ export const data = [
     {id: 9, name: "Blastoise", tipo: ["Agua"], fraqueza: ["Planta", "Eletrico"], imagem: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/009.png"},
     {id: 10, name: "Caterpie", tipo: ["Inseto"], fraqueza: ["Fogo", "Voador", "Pedra"], imagem: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/010.png"}, 
     {id: 11, name: "Metapod", tipo: ["Inseto"], fraqueza: ["Fogo", "Voador", "Pedra"], imagem: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/011.png"},
-    {id: 12, name: "Butterfree", tipo: ["Inseto", "Voador"], fraqueza: ["Fogo", "Voador", "Pedra", "Gelo", "Eletrico"], imagem: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/012.png"},
+    {id: 12, name: "Butterfree", tipo: ["Inseto", "Voador"], fraqueza: ["Fogo", "Voador", "Pedra", "Gelo"], imagem: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/012.png"},
     {id: 13, name: "Weedle", tipo: ["Inseto", "Venenoso"],  fraqueza: ["Fogo", "Voador", "Pedra", "Psiquico"], imagem: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/013.png"},
     {id: 14, name: "Kakuna", tipo: ["Inseto", "Venenoso"],  fraqueza: ["Fogo", "Voador", "Pedra", "Psiquico"], imagem: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/014.png"},
     {id: 15, name: "Beedrill", tipo: ["Inseto", "Venenoso"],  fraqueza: ["Fogo", "Voador", "Pedra", "Psiquico"], imagem: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/015.png"},

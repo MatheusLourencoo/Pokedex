@@ -3,7 +3,7 @@ export const cores = {
   Fogo: "#be5810",
   Agua: "#96b2f3",
   Eletrico: "#eee364",
-  Inseto: "#cce928",
+  Inseto: "#A2C11C",
   Normal: "#c1c0c0",
   Psiquico: "#cb34b2",
   Sombrio: "#400134",
