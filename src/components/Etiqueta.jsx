@@ -1,4 +1,4 @@
-import { getCor } from "./cores";
+import { getCor } from "../constants/cores";
 
 const Etiqueta = ({ tipo }) => (
   <span
@@ -9,6 +9,7 @@ const Etiqueta = ({ tipo }) => (
       marginLeft: "5px",
       fontWeight: "bold",
       fontSize: "12px",
+      display: "inline-block",
       color: "#fff",
     }}
   >

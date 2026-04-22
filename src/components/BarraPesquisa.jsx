@@ -1,6 +1,7 @@
 function BarraPesquisa({ termoBusca, setTermoBusca }) {
-  return (
+  return ( 
     <input
+      style={{ textAlign: "center" }}
       placeholder="Pesquisar por nome ou ID..."
       className="pesquisa"
       value={termoBusca}

@@ -38,7 +38,7 @@ function SelecaoOrdem({ ordemSelecionada, setOrdemSelecionada }) {
 
       <div ref={ref} style={{ position: "relative", width: "260px" }}>
         
-        {/* BOTÃO */}
+        
         <div
           onClick={() => setAberto(!aberto)}
           style={{
@@ -56,7 +56,6 @@ function SelecaoOrdem({ ordemSelecionada, setOrdemSelecionada }) {
           <span>▼</span>
         </div>
 
-        {/* DROPDOWN */}
         {aberto && (
           <div
             style={{
@@ -80,7 +79,7 @@ function SelecaoOrdem({ ordemSelecionada, setOrdemSelecionada }) {
                   padding: "12px",
                   cursor: "pointer",
                   borderBottom: "1px solid #555",
-                  color: "#fff", // 👈 texto branco aqui
+                  color: "#fff", 
                 }}
                 onMouseEnter={(e) =>
                   (e.target.style.background = "#555")

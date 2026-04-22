@@ -1,4 +1,4 @@
-import { getCor } from "./cores";
+import { getCor } from "../constants/cores";
 
 function FiltroFraquezas({
   fraquezasPossiveis,

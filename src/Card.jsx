@@ -1,5 +1,5 @@
 import Etiqueta from "./components/Etiqueta";
-import { getCor } from "./components/cores";
+import { getCor } from "./constants/cores";
 
 
 const Card = ({ nome, imagem, id, tipo, fraqueza }) => {
@@ -7,8 +7,8 @@ const Card = ({ nome, imagem, id, tipo, fraqueza }) => {
 
   return (
     <div
-      className="card flex flex-col items-center px-4 max-w-[250px] w-full"
-      style={{ backgroundColor: getCor(tipoPrincipal) + "cc" }}
+      className="card flex flex-col items-center px-4"
+      style={{ backgroundColor: getCor(tipoPrincipal) + "cc", width: "250px" }}
     >
       <img src={imagem} alt={nome} />
       <h2 className="text-xl font-extrabold text-slate-800 capitalize mt-2 mb-0">{nome}</h2>
@@ -27,7 +27,6 @@ const Card = ({ nome, imagem, id, tipo, fraqueza }) => {
           </div>
         </div>
 
-        {/* Bloco de Fraqueza */}
         <div className="flex flex-col items-center gap-1">
           <span className="text-[10px] font-black text-slate-600 uppercase tracking-widest">
             Fraquezas
