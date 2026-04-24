@@ -6,8 +6,19 @@ export function useFiltroPokemons() {
   const [tiposSelecionados, setTiposSelecionados] = useState([]);
   const [fraquezasSelecionadas, setFraquezasSelecionadas] = useState([]);
   const [ordemSelecionada, setOrdemSelecionada] = useState("a-z");
+  
   const tiposDisponiveis = [...new Set(data.flatMap((p) => p.tipo))].sort();
-  const fraquezasPossiveis = [...new Set(data.flatMap((p) => p.fraqueza))].sort();
+
+  let fraquezasPossiveis = [];
+  
+  if (tiposSelecionados.length === 0) {
+    fraquezasPossiveis = [...new Set(data.flatMap((p) => p.fraqueza))].sort();
+  } else {
+    const pokemonsFiltradosPorTipo = data.filter((pokemon) => 
+      tiposSelecionados.every((t) => pokemon.tipo.includes(t))
+    );
+    fraquezasPossiveis = [...new Set(pokemonsFiltradosPorTipo.flatMap((p) => p.fraqueza))].sort();
+  }
 
   const alternarTipo = (tipo) =>
     setTiposSelecionados((prev) =>
