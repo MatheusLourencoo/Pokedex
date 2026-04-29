@@ -2,8 +2,10 @@ import Etiqueta from "./components/Etiqueta";
 import { getCor } from "./constants/cores";
 
 
-const Card = ({ nome, imagem, id, tipo, fraqueza }) => {
+const Card = ({ nome, imagem, id, tipo, fraqueza, destacar }) => {
   const tipoPrincipal = tipo[0].trim();
+
+
 
   return (
     <div
@@ -15,7 +17,7 @@ const Card = ({ nome, imagem, id, tipo, fraqueza }) => {
       <span className="text-sm font-bold text-slate-500 mb-4">Nº {id}</span>
 
       <div className="flex flex-col w-full gap-4">
-        
+
         <div className="flex flex-col items-center gap-1">
           <span className="text-[10px] font-black text-slate-600 uppercase tracking-widest">
             Tipo
@@ -39,6 +41,11 @@ const Card = ({ nome, imagem, id, tipo, fraqueza }) => {
         </div>
 
       </div>
+
+        <div>
+          <button>{adicionarItem}</button>
+        </div>
+
     </div>
   );
 };

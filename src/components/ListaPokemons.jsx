@@ -11,6 +11,9 @@ function ListaPokemons({ listaFiltrada }) {
           id={pokemon.id}
           tipo={pokemon.tipo}
           fraqueza={pokemon.fraqueza}
+          listaFiltrada
+          listaDestaque
+
         />
       ))}
     </div>

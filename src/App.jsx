@@ -11,14 +11,27 @@ import { useFiltroPokemons } from "./components/useFiltroPokemons";
 
 
 function App() {
-  const {termoBusca, setTermoBusca,
+  const { termoBusca, setTermoBusca,
     tiposSelecionados, alternarTipo, limparTipos,
     fraquezasSelecionadas, alternarFraqueza, limparFraquezas,
     ordemSelecionada, setOrdemSelecionada,
     listaFiltrada,
-    tiposDisponiveis,     
+    tiposDisponiveis,
     fraquezasPossiveis,
   } = useFiltroPokemons();
+
+  const [listaDestaque, setListaDestaque] = useState([]);
+
+  
+  const adicionarItem = (item) =>
+    setTiposSelecionados((item) =>
+      item.includes(destacar) ?
+        <button value={listaDestaque} onClick={(e) => setListaDestaque(e.target.value)}>Destacar</button>
+        :
+        <button>Ja adicionado</button>).
+        return(
+          <button>{adicionarItem}</button>
+        )
 
   return (
     <>
@@ -27,7 +40,7 @@ function App() {
         <img className="logoPokedex" src={imagemPokedexLogo} alt="logo Pokedex" />
         <BarraPesquisa termoBusca={termoBusca} setTermoBusca={setTermoBusca} />
       </header>
-      
+
       <div className="app-container">
 
         <div className="botao-ordenar">
@@ -39,17 +52,31 @@ function App() {
         <div className="area-filtros">
           <div className="secao-filtro">
             <h2>Filtrar por Tipo</h2>
-              <FiltroTipos tiposDisponiveis={tiposDisponiveis} tiposSelecionados={tiposSelecionados} alternarTipo={alternarTipo} limparTipos={limparTipos} />
+            <FiltroTipos tiposDisponiveis={tiposDisponiveis} tiposSelecionados={tiposSelecionados} alternarTipo={alternarTipo} limparTipos={limparTipos} />
           </div>
 
           <div className="secao-filtro">
             <h2>Filtrar por Fraqueza</h2>
-              <FiltroFraquezas fraquezasPossiveis={fraquezasPossiveis} fraquezasSelecionadas={fraquezasSelecionadas} alternarFraqueza={alternarFraqueza} limparFraquezas={limparFraquezas} />
+            <FiltroFraquezas fraquezasPossiveis={fraquezasPossiveis} fraquezasSelecionadas={fraquezasSelecionadas} alternarFraqueza={alternarFraqueza} limparFraquezas={limparFraquezas} />
           </div>
         </div>
 
         <main className="area-cards">
+        
+      
+
+        <div>
+            <span>
+              {listaDestaque.map((tipo) => (
+                key = { tipo }
+              ))}
+              MEUS DESTAQUES
+            </span>
+          </div>
+
           <ListaPokemons listaFiltrada={listaFiltrada} />
+
+          
         </main>
 
       </div>
